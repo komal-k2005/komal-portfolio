@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
 import TypingAnimation from './TypingAnimation'
+import { portfolioData } from '../data/portfolio'
 
 export default function Hero() {
-  const roles = ['B.Tech Computer Engineering Student', 'Aspiring Data Scientist', 'Java | Python Developer', 'Future AI Engineer']
+  const { hero } = portfolioData
+  const { roles } = hero
 
   return (
     <section
@@ -29,9 +31,9 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6"
         >
-          <span className="text-slate-100">Hi, I'm </span>
+          <span className="text-slate-100">{hero.greeting}</span>
           <span className="bg-gradient-to-r from-indigo-400 via-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
-            Komal Kathawade
+            {hero.name}
           </span>
         </motion.h1>
 
@@ -50,7 +52,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           className="text-slate-500 max-w-2xl mx-auto mb-12 text-lg"
         >
-          Turning Data into Insights | Turning Ideas into Reality
+          {hero.description}
         </motion.p>
 
         <motion.div

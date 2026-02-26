@@ -1,43 +1,10 @@
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { motion } from 'framer-motion'
-
-const projects = [
-  {
-    title: 'Data Science Projects',
-    description: 'Exploratory data analysis, visualization, and insights extraction from diverse datasets.',
-    tags: ['Python', 'Pandas', 'Matplotlib'],
-    link: 'https://github.com/komal-k2005',
-    gradient: 'from-indigo-500/20 to-violet-600/20',
-    icon: '📊',
-  },
-  {
-    title: 'Machine Learning Models',
-    description: 'Building and training ML models for classification, regression, and predictive analytics.',
-    tags: ['Python', 'scikit-learn', 'ML'],
-    link: 'https://github.com/komal-k2005',
-    gradient: 'from-violet-500/20 to-fuchsia-600/20',
-    icon: '🤖',
-  },
-  {
-    title: 'Java Backend Applications',
-    description: 'Scalable backend systems and APIs built with Java for robust enterprise solutions.',
-    tags: ['Java', 'Spring', 'MySQL'],
-    link: 'https://github.com/komal-k2005',
-    gradient: 'from-fuchsia-500/20 to-indigo-600/20',
-    icon: '☕',
-  },
-  {
-    title: 'Full-Stack Web Apps',
-    description: 'Modern web applications with React, Tailwind, and responsive UI design.',
-    tags: ['React', 'Tailwind', 'PHP'],
-    link: 'https://github.com/komal-k2005',
-    gradient: 'from-indigo-500/20 to-fuchsia-600/20',
-    icon: '🌐',
-  },
-]
+import { portfolioData } from '../data/portfolio'
 
 export default function Projects() {
+  const { projects } = portfolioData
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
@@ -51,18 +18,18 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-slate-100">My </span>
+            <span className="text-slate-100">{projects.title}</span>
             <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
-              Projects
+              {projects.highlight}
             </span>
           </h2>
           <p className="text-slate-500 max-w-xl mx-auto">
-            A selection of projects I've worked on
+            {projects.description}
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
+          {projects.list.map((project, index) => (
             <motion.a
               key={project.title}
               href={project.link}
@@ -95,7 +62,7 @@ export default function Projects() {
                   ))}
                 </div>
                 <div className="mt-6 flex items-center text-indigo-400 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                  View Project
+                  {project.linkText || 'View Project'}
                   <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
