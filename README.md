@@ -51,10 +51,3 @@ npm run build
 npm run preview
 ```
 
-## Customization
-
-1. **Update your name** in `src/components/Hero.tsx` (replace `[Your Name]`)
-2. **Update contact info** in `src/components/Contact.tsx` (email, GitHub, LinkedIn URLs)
-3. **Edit project data** in `src/components/Projects.tsx`
-4. **Adjust skills** in `src/components/Skills.tsx`
-5. **Modify About section** in `src/components/About.tsx`
