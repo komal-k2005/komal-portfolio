@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
-
 interface TypingAnimationProps {
   words: string[]
   className?: string
@@ -42,11 +40,7 @@ export default function TypingAnimation({ words, className = '' }: TypingAnimati
   return (
     <span className={className}>
       {currentText}
-      <motion.span
-        animate={{ opacity: [1, 0] }}
-        transition={{ duration: 0.5, repeat: Infinity }}
-        className="inline-block w-0.5 h-[1em] bg-indigo-400 ml-0.5 align-bottom"
-      />
+      <span className="d-inline-block bg-primary ms-1 cursor-blink" style={{ width: '2px', height: '1em', verticalAlign: 'bottom' }} />
     </span>
   )
 }

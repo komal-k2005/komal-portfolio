@@ -1,102 +1,104 @@
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
-import { motion } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 import { portfolioData } from '../data/portfolio'
 
 export default function About() {
   const { about } = portfolioData
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const [isVisible, setIsVisible] = useState(false)
+  const ref = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.1 }
+    )
+
+    if (ref.current) {
+      observer.observe(ref.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <section id="about" className="py-24 px-6" ref={ref}>
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="glass-card p-8 md:p-12 rounded-3xl"
+    <section id="about" className="py-5 px-4" ref={ref}>
+      <div className="container" style={{ maxWidth: '1152px' }}>
+        <div
+          className={`glass-card p-4 p-md-5 rounded-4 fade-up ${isVisible ? 'in-view' : ''}`}
         >
-          <div className="flex flex-col lg:flex-row gap-12 items-start mt-8">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex-shrink-0 w-full lg:w-1/3"
+          <div className="d-flex flex-column flex-lg-row gap-5 align-items-start mt-4">
+            <div
+              className={`flex-shrink-0 w-100 fade-up delay-200 ${isVisible ? 'in-view' : ''}`}
+              style={{ flex: '0 0 auto', width: '33.333333%' }}
             >
-              <div className="w-full aspect-square rounded-2xl bg-gradient-to-br from-indigo-500/20 to-violet-600/20 border border-white/10 flex items-center justify-center overflow-hidden">
-                <span className="text-8xl">👩‍💻</span>
+              <div className="w-100 rounded-4 d-flex align-items-center justify-content-center overflow-hidden" style={{ aspectRatio: '1', background: 'linear-gradient(to bottom right, rgba(99, 102, 241, 0.2), rgba(124, 58, 237, 0.2))', border: '1px solid rgba(255,255,255,0.1)' }}>
+                <span style={{ fontSize: '6rem' }}>👩‍💻</span>
               </div>
-            </motion.div>
+            </div>
 
-            <div className="flex-1 space-y-8">
+            <div className="flex-grow-1" style={{ gap: '2rem', display: 'flex', flexDirection: 'column' }}>
               <div>
-                <motion.h2
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isInView ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                  className="text-3xl md:text-4xl font-bold mb-6"
+                <h2
+                  className={`display-5 fw-bold mb-4 fade-up delay-100 ${isVisible ? 'in-view' : ''}`}
                 >
-                  <span className="text-slate-100">{about.title}</span>
-                  <span className="bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">
+                  <span className="text-light">{about.title}</span>
+                  <span className="text-gradient">
                     {about.highlight}
                   </span>
-                </motion.h2>
+                </h2>
 
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="text-slate-400 text-lg leading-relaxed"
+                <p
+                  className={`lead fade-up delay-200 ${isVisible ? 'in-view' : ''}`}
+                  style={{ color: '#94a3b8', lineHeight: '1.8' }}
                 >
                   {about.description}
-                </motion.p>
+                </p>
               </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.3 }}
+              <div
+                className={`fade-up delay-300 ${isVisible ? 'in-view' : ''}`}
               >
-                <h3 className="text-2xl font-bold text-slate-100 mb-4 border-b border-white/10 pb-2">Experience</h3>
+                <h3 className="h4 fw-bold text-light mb-4 pb-2 border-bottom" style={{ borderColor: 'rgba(255,255,255,0.1) !important' }}>Experience</h3>
                 {about.experience.map((exp, index) => (
-                  <div key={index} className="bg-white/5 rounded-xl p-6 border border-white/10 mb-4">
-                    <div className="flex flex-col md:flex-row justify-between mb-2">
-                      <h4 className="text-xl font-semibold text-indigo-400">{exp.title}</h4>
-                      <span className="text-slate-400 text-sm md:text-base bg-indigo-500/10 px-3 py-1 rounded-full w-fit">{exp.period}</span>
+                  <div key={index} className="rounded-4 p-4 mb-4" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                    <div className="d-flex flex-column flex-md-row justify-content-between mb-2">
+                      <h4 className="h5 fw-semibold text-primary">{exp.title}</h4>
+                      <span className="small px-3 py-1 rounded-pill" style={{ background: 'rgba(99, 102, 241, 0.1)', color: '#94a3b8', width: 'fit-content' }}>{exp.period}</span>
                     </div>
-                    <div className="text-slate-300 font-medium mb-4">{exp.company}</div>
-                    <ul className="list-disc list-inside text-slate-400 space-y-2 text-sm md:text-base">
+                    <div className="fw-medium mb-3" style={{ color: '#cbd5e1' }}>{exp.company}</div>
+                    <ul className="small" style={{ color: '#94a3b8', paddingLeft: '1.5rem', marginBottom: 0 }}>
                       {exp.points.map((point, idx) => (
-                        <li key={idx}>{point}</li>
+                        <li key={idx} className="mb-2">{point}</li>
                       ))}
                     </ul>
                   </div>
                 ))}
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.4 }}
+              <div
+                className={`fade-up delay-400 ${isVisible ? 'in-view' : ''}`}
               >
-                <h3 className="text-2xl font-bold text-slate-100 mb-4 border-b border-white/10 pb-2">Education</h3>
-                <div className="space-y-4">
+                <h3 className="h4 fw-bold text-light mb-4 pb-2 border-bottom" style={{ borderColor: 'rgba(255,255,255,0.1) !important' }}>Education</h3>
+                <div className="d-flex flex-column gap-3">
                   {about.education.map((edu, index) => (
-                    <div key={index} className="bg-white/5 rounded-xl p-6 border border-white/10">
-                      <div className="flex flex-col md:flex-row justify-between mb-2">
-                        <h4 className="text-xl font-semibold text-indigo-400">{edu.degree}</h4>
-                        <span className="text-slate-400 text-sm md:text-base bg-indigo-500/10 px-3 py-1 rounded-full w-fit">{edu.period}</span>
+                    <div key={index} className="rounded-4 p-4" style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                      <div className="d-flex flex-column flex-md-row justify-content-between mb-2">
+                        <h4 className="h5 fw-semibold text-primary">{edu.degree}</h4>
+                        <span className="small px-3 py-1 rounded-pill" style={{ background: 'rgba(99, 102, 241, 0.1)', color: '#94a3b8', width: 'fit-content' }}>{edu.period}</span>
                       </div>
-                      <div className="text-slate-300 font-medium mb-1">{edu.institution}</div>
-                      <div className="text-fuchsia-400/80 font-medium text-sm">{edu.score}</div>
+                      <div className="fw-medium mb-1" style={{ color: '#cbd5e1' }}>{edu.institution}</div>
+                      <div className="small fw-medium" style={{ color: 'rgba(232, 121, 249, 0.8)' }}>{edu.score}</div>
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
