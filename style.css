@@ -1,0 +1,530 @@
+:root {
+    --bg-dark: #030a16;
+    --bg-card: rgba(10, 25, 47, 0.4);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-1: #64ffda;
+    --accent-2: #38bdf8;
+    --accent-3: #818cf8;
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-inner-border: rgba(255, 255, 255, 0.05);
+    --gradient-custom: linear-gradient(135deg, var(--accent-2), var(--accent-3));
+    --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Styles */
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+}
+
+.font-monospace {
+    font-family: 'JetBrains Mono', monospace !important;
+}
+
+.text-gradient {
+    background: var(--gradient-custom);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.bg-gradient-custom {
+    background: var(--gradient-custom) !important;
+}
+
+.bg-darker {
+    background-color: var(--bg-darker);
+}
+
+.max-w-2xl {
+    max-width: 42rem;
+}
+
+.text-purple {
+    color: #a78bfa;
+}
+
+.bg-purple-subtle {
+    background-color: rgba(139, 92, 246, 0.1) !important;
+}
+
+/* Typography Overrides */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-primary);
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 300px;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .section-title::after {
+        width: 100%;
+    }
+}
+
+
+/* Glassmorphism */
+.glass-nav {
+    background: rgba(10, 25, 47, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.glass-panel {
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-base);
+}
+
+.glass-panel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+    opacity: 0.5;
+}
+
+.glass-panel:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-5px);
+}
+
+/* Buttons */
+.custom-btn {
+    background: var(--gradient-custom);
+    border: none;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+}
+
+.custom-btn-outline {
+    border: 2px solid var(--accent-3);
+    color: var(--accent-3);
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+.custom-btn-outline:hover {
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--accent-3);
+    transform: translateY(-3px);
+}
+
+.border-btn {
+    border: 1px solid var(--accent-3);
+    color: var(--accent-3) !important;
+    border-radius: 4px;
+    padding: 0.5rem 1rem !important;
+    transition: all 0.3s ease;
+}
+
+.border-btn:hover {
+    background: rgba(139, 92, 246, 0.1);
+}
+
+/* Navbar */
+.navbar-nav .nav-link {
+    color: var(--text-primary);
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.navbar-nav .nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background: var(--gradient-custom);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::before,
+.navbar-nav .nav-link.active::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--accent-3);
+}
+
+.navbar-brand {
+    color: var(--text-primary) !important;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* Typing Animation */
+.cursor-blink {
+    color: var(--accent-3);
+    font-weight: bold;
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Mesh Gradient Background */
+.particle-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-color: var(--bg-dark);
+    background-image:
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(129, 140, 248, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(129, 140, 248, 0.1) 0px, transparent 50%),
+        radial-gradient(at 0% 100%, rgba(56, 189, 248, 0.1) 0px, transparent 50%);
+    animation: meshScroll 20s ease infinite;
+}
+
+@keyframes meshScroll {
+
+    0%,
+    100% {
+        background-position: 0% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+/* Lists */
+.list-styled {
+    list-style: none;
+    padding-left: 0;
+}
+
+.list-styled li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.list-styled li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-3);
+}
+
+/* Timeline */
+.timeline-container {
+    border-left: 2px solid rgba(139, 92, 246, 0.3);
+    padding-left: 20px;
+    margin-left: 10px;
+}
+
+.timeline-dot {
+    width: 14px;
+    height: 14px;
+    background: var(--bg-dark);
+    border: 2px solid var(--accent-3);
+    border-radius: 50%;
+    position: absolute;
+    left: -28px;
+    top: 5px;
+}
+
+/* Cards Hover Effects */
+.experience-card,
+.skill-card,
+.project-card,
+.contact-link {
+    transition: all 0.3s ease;
+}
+
+.experience-card:hover,
+.skill-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card .project-icon {
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+    color: var(--accent-3) !important;
+}
+
+.project-glow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: -50px;
+    right: -50px;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.2;
+    transition: opacity 0.5s ease;
+}
+
+.project-card:hover .project-glow {
+    opacity: 0.5;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    text-decoration: none;
+}
+
+.contact-link:hover {
+    transform: translateY(-10px);
+    border-color: rgba(139, 92, 246, 0.5);
+    background: rgba(139, 92, 246, 0.1);
+}
+
+/* Animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0);
+}
+
+.project-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    z-index: 2;
+}
+
+.project-btn,
+.project-btn-outline {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-btn {
+    background: var(--accent-gradient);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.project-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+    color: white;
+}
+
+.project-btn-outline {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+}
+
+.project-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent-3);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.stagger-item.active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition-delay: calc(var(--delay) * 100ms);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes magnetic {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(var(--mx), var(--my));
+    }
+}
+
+/* Premium Effects */
+.glint {
+    position: relative;
+    overflow: hidden;
+}
+
+.glint::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent);
+    transform: skewX(-25deg);
+    transition: none;
+    pointer-events: none;
+}
+
+.glint:hover::before {
+    animation: glintEffect 0.8s ease;
+}
+
+@keyframes glintEffect {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 150%;
+    }
+}
+
+.glow-sphere {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(40px);
+}
+
+.hero-content>* {
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    opacity: 0;
+}
+
+.hero-content>*:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.hero-content>*:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.hero-content>*:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.hero-content>*:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+.hero-content>*:nth-child(5) {
+    animation-delay: 0.6s;
+}
+
+.hero-content>*:nth-child(6) {
+    animation-delay: 0.7s;
+}
+
+/* 3D Tilt Effect */
+.tilt-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.tilt-content {
+    transform: translateZ(20px);
+}

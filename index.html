@@ -1,16 +1,350 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Komal Kathwade | B.Tech Computer Engineering | Data Science & AI</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Komal Kathawade | Portfolio</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-smooth-scroll="true" tabindex="0">
+
+
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top glass-nav">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-3 font-monospace">
+          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item">
+            <a href="https://github.com/komal-k2005" target="_blank" class="nav-link border-btn">GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Background Decor -->
+  <div class="glow-sphere" style="top: 10%; left: -5%; width: 600px; height: 600px;"></div>
+  <div class="glow-sphere"
+    style="top: 40%; right: -10%; background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);">
+  </div>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section d-flex align-items-center min-vh-100 position-relative overflow-hidden">
+    <div class="particle-bg" id="particles"></div>
+    <div class="container z-1">
+      <div class="row align-items-center">
+        <div class="col-lg-8 hero-content">
+          <p class="font-monospace text-gradient mb-3">Hi, my name is</p>
+          <h1 class="display-1 fw-bold text-white mb-2">Komal Kathawade.</h1>
+          <h2 class="display-3 fw-bold text-secondary mb-4">I build things for the web.</h2>
+          <div class="typing-container mb-4">
+            <span id="typing-text" class="text-gradient h4 font-monospace"></span><span class="cursor-blink">|</span>
+          </div>
+          <p class="lead text-secondary mb-5 max-w-2xl">
+            I love building websites and apps that are easy to use. I'm a student who enjoys coding and turning new
+            ideas into real projects.
+          </p>
+          <div class="d-flex gap-3">
+            <a href="#contact" class="btn btn-primary btn-lg custom-btn">Get In Touch</a>
+            <a href="#projects" class="btn btn-outline-light btn-lg custom-btn-outline">View Work</a>
+          </div>
+        </div>
+        <div class="col-lg-4 d-none d-lg-block">
+          <div class="glass-panel p-2 rounded-4 reveal" style="transform: rotate(3deg);">
+            <img src="komal.png" alt="Tech" class="img-fluid rounded-4 shadow-lg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-5 my-5">
+    <div class="container">
+      <h2 class="section-title mb-5 reveal"><span class="text-gradient"></span> About Me</h2>
+      <div class="row gy-5">
+        <div class="col-lg-6">
+          <p class="text-secondary lead">
+            I am a student learning computer engineering. I enjoy building websites from start to finish. I use Java,
+            Python, and other web tools to create my projects.
+          </p>
+          <p class="text-secondary lead mb-4">
+            I focus on making sure the backend works smoothly and the frontend looks great on all screens.
+          </p>
+
+          <h4 class="text-white mb-4 mt-5"><i class="bi bi-briefcase text-gradient me-2"></i> Experience</h4>
+          <div class="experience-card glass-panel p-4 rounded-4 mb-4 glint">
+            <h5 class="text-white">Web Application Development Intern</h5>
+            <h6 class="text-gradient mb-3">Owntap Consultancy Services Private Ltd, Beed</h6>
+            <p class="text-secondary small mb-3"><i class="bi bi-calendar3 me-2"></i>June 2023 - July 2023</p>
+            <ul class="text-secondary list-styled">
+              <li>Developed responsive web applications using HTML, CSS, JavaScript, and PHP.</li>
+              <li>Designed relational database schemas using MySQL and implemented CRUD operations.</li>
+              <li>Optimized SQL queries and backend logic to improve application performance.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <h4 class="text-white mb-4"><i class="bi bi-mortarboard text-gradient me-2"></i> Education</h4>
+
+          <div class="timeline-container">
+            <div class="timeline-item position-relative mb-4 ps-4">
+              <div class="timeline-dot"></div>
+              <h5 class="text-white">B.Tech In Computer Engineering</h5>
+              <h6 class="text-gradient mb-2">G H Raisoni College of Engineering and Management</h6>
+              <p class="text-secondary small mb-2"><i class="bi bi-calendar3 me-2"></i>Sept 2024 – June 2027</p>
+              <span class="badge bg-purple-subtle text-purple px-3 py-2 rounded-pill">CGPA: 9.16</span>
+            </div>
+
+            <div class="timeline-item position-relative ps-4">
+              <div class="timeline-dot"></div>
+              <h5 class="text-white">Diploma In Computer Technology</h5>
+              <h6 class="text-gradient mb-2">Yashwantrao Chavan Institute of Polytechnic</h6>
+              <p class="text-secondary small mb-2"><i class="bi bi-calendar3 me-2"></i>Aug 2021 – June 2024</p>
+              <span class="badge bg-purple-subtle text-purple px-3 py-2 rounded-pill">Percentage: 88.40%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-5 my-5 bg-darker">
+    <div class="container">
+      <h2 class="section-title text-center mb-5 reveal"><span class="text-gradient"></span> Technical Skills</h2>
+      <p class="text-center text-secondary mb-5">Technologies and tools I work with to bring ideas to life</p>
+
+      <div class="row g-4 justify-content-center">
+        <!-- Programming -->
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-card text-center p-4 rounded-4 glass-panel h-100 glint">
+            <i class="bi bi-code-slash fs-1 text-gradient mb-3"></i>
+            <h5 class="text-white mb-3">Programming</h5>
+            <p class="text-secondary small mb-0">Java, Python</p>
+          </div>
+        </div>
+        <!-- Frontend -->
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-card text-center p-4 rounded-4 glass-panel h-100 glint">
+            <i class="bi bi-layout-text-window-reverse fs-1 text-gradient mb-3"></i>
+            <h5 class="text-white mb-3">Frontend Development</h5>
+            <p class="text-secondary small mb-0">HTML, CSS, JavaScript, React.js</p>
+          </div>
+        </div>
+        <!-- Backend -->
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-card text-center p-4 rounded-4 glass-panel h-100 glint">
+            <i class="bi bi-hdd-network fs-1 text-gradient mb-3"></i>
+            <h5 class="text-white mb-3">Backend Development</h5>
+            <p class="text-secondary small mb-0">PHP, Node.js</p>
+          </div>
+        </div>
+        <!-- Database -->
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-card text-center p-4 rounded-4 glass-panel h-100 glint">
+            <i class="bi bi-database fs-1 text-gradient mb-3"></i>
+            <h5 class="text-white mb-3">Database</h5>
+            <p class="text-secondary small mb-0">MySQL</p>
+          </div>
+        </div>
+        <!-- Core Concepts -->
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-card text-center p-4 rounded-4 glass-panel h-100 glint">
+            <i class="bi bi-lightbulb fs-1 text-gradient mb-3"></i>
+            <h5 class="text-white mb-3">Core Concepts</h5>
+            <p class="text-secondary small mb-0">Data Structures & Algorithms, OOPS, DBMS, REST APIs</p>
+          </div>
+        </div>
+        <!-- Tools -->
+        <div class="col-lg-4 col-md-6">
+          <div class="skill-card text-center p-4 rounded-4 glass-panel h-100 glint">
+            <i class="bi bi-tools fs-1 text-gradient mb-3"></i>
+            <h5 class="text-white mb-3">Tools & Version Control</h5>
+            <p class="text-secondary small mb-0">Git, GitHub, VS Code</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-5 my-5">
+    <div class="container">
+      <h2 class="section-title mb-5 reveal"><span class="text-gradient"></span> Featured Projects</h2>
+
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-lg-6">
+          <div
+            class="project-card glass-panel rounded-4 p-4 h-100 d-flex flex-column position-relative overflow-hidden glint">
+            <div class="project-glow bg-primary"></div>
+            <div class="d-flex justify-content-between align-items-center mb-4 z-1">
+              <i class="bi bi-phone fs-1 text-gradient"></i>
+            </div>
+            <h4 class="text-white z-1">Student ID System (QR Code)</h4>
+            <p class="text-secondary flex-grow-1 z-1">A web app that helps schools manage student IDs and attendance
+              easily using QR codes.</p>
+            <div class="project-tags font-monospace small z-1 mb-4">
+              <span class="text-gradient me-3">HTML</span>
+              <span class="text-gradient me-3">CSS</span>
+              <span class="text-gradient me-3">JavaScript</span>
+              <span class="text-gradient me-3">MySQL</span>
+              <span class="text-gradient">PHP</span>
+            </div>
+            <div class="project-actions z-1">
+              <a href="https://github.com/komal-k2005/student_identification" target="_blank" class="project-btn">
+                <i class="bi bi-github"></i> Project Repository
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="col-lg-6">
+          <div
+            class="project-card glass-panel rounded-4 p-4 h-100 d-flex flex-column position-relative overflow-hidden glint">
+            <div class="project-glow bg-info"></div>
+            <div class="d-flex justify-content-between align-items-center mb-4 z-1">
+              <i class="bi bi-graph-up fs-1 text-gradient"></i>
+            </div>
+            <h4 class="text-white z-1">GitHub Portfolio Analyzer Enhancer</h4>
+            <p class="text-secondary flex-grow-1 z-1">An AI tool that looks at GitHub profiles and gives helpful tips to
+              make them better for jobs.</p>
+            <div class="project-tags font-monospace small z-1 mb-4">
+              <span class="text-gradient me-3">Next.js</span>
+              <span class="text-gradient me-3">TailwindCSS</span>
+              <span class="text-gradient me-3">React</span>
+              <span class="text-gradient">Node.js</span>
+            </div>
+            <div class="project-actions z-1">
+              <a href="https://github-portfolio-analyzer-enhancer.vercel.app/" target="_blank" class="project-btn">
+                <i class="bi bi-eye"></i> View Demo
+              </a>
+              <a href="https://github.com/komal-k2005/GITHUB-PORTFOLIO-ANALYZER-ENHANCER" target="_blank"
+                class="project-btn-outline">
+                <i class="bi bi-github"></i> Repository
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="col-lg-6">
+          <div
+            class="project-card glass-panel rounded-4 p-4 h-100 d-flex flex-column position-relative overflow-hidden glint">
+            <div class="project-glow bg-warning"></div>
+            <div class="d-flex justify-content-between align-items-center mb-4 z-1">
+              <i class="bi bi-check2-square fs-1 text-gradient"></i>
+            </div>
+            <h4 class="text-white z-1">Todo Application</h4>
+            <p class="text-secondary flex-grow-1 z-1">A simple and clean app to help you keep track of your daily tasks
+              and to-do lists.</p>
+            <div class="project-tags font-monospace small z-1 mb-4">
+              <span class="text-gradient me-3">HTML</span>
+              <span class="text-gradient me-3">CSS</span>
+              <span class="text-gradient me-3">JavaScript</span>
+              <span class="text-gradient">Bootstrap</span>
+            </div>
+            <div class="project-actions z-1">
+              <a href="https://komal-k2005.github.io/todo-app/" target="_blank" class="project-btn">
+                <i class="bi bi-eye"></i> View Demo
+              </a>
+              <a href="https://github.com/komal-k2005/todo-app" target="_blank" class="project-btn-outline">
+                <i class="bi bi-github"></i> Repository
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="col-lg-6">
+          <div
+            class="project-card glass-panel rounded-4 p-4 h-100 d-flex flex-column position-relative overflow-hidden glint">
+            <div class="project-glow bg-success"></div>
+            <div class="d-flex justify-content-between align-items-center mb-4 z-1">
+              <i class="bi bi-flower1 fs-1 text-gradient"></i>
+            </div>
+            <h4 class="text-white z-1">KrishiMitra AI</h4>
+            <p class="text-secondary flex-grow-1 z-1">An AI helper for farmers that gives advice on the best crops to
+              grow and farming tips.</p>
+            <div class="project-tags font-monospace small z-1 mb-4">
+              <span class="text-gradient me-3">AI</span>
+              <span class="text-gradient me-3">Agentic AI</span>
+              <span class="text-gradient me-3">Prompt Engineering</span>
+            </div>
+            <div class="project-actions z-1">
+              <a href="https://app.ashna.ai/chat?agent=krishimitra-ai-F7qdD" target="_blank" class="project-btn">
+                <i class="bi bi-eye"></i> View Demo
+              </a>
+              <a href="https://github.com/komal-k2005/KrishiMitra-AI" target="_blank" class="project-btn-outline">
+                <i class="bi bi-github"></i> Repository
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 my-5">
+    <div class="container text-center">
+      <p class="text-gradient font-monospace mb-2"> What's Next?</p>
+      <h2 class="display-4 fw-bold text-white mb-4">Get In Touch</h2>
+      <p class="text-secondary lead max-w-2xl mx-auto mb-5">
+        Whether you have a question or just want to say hi, I'll try my best to get back to you! Currently exploring new
+        opportunities in Software Development.
+      </p>
+      <div class="d-flex justify-content-center gap-4 mb-5 flex-wrap">
+        <a href="mailto:hellokomalk@gmail.com" class="contact-link glass-panel p-4 rounded-circle">
+          <i class="bi bi-envelope fs-2 text-gradient"></i>
+        </a>
+        <a href="https://github.com/komal-k2005" target="_blank" class="contact-link glass-panel p-4 rounded-circle">
+          <i class="bi bi-github fs-2 text-gradient"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/komal-kathawade/" target="_blank"
+          class="contact-link glass-panel p-4 rounded-circle">
+          <i class="bi bi-linkedin fs-2 text-gradient"></i>
+        </a>
+      </div>
+      <a href="mailto:hellokomalk@gmail.com" class="btn btn-primary btn-lg custom-btn">Say Hello</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 text-center mt-5">
+    <div class="container">
+      <p class="text-secondary font-monospace small mb-0">Designed & Built by Komal Kathawade</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+
 </html>
