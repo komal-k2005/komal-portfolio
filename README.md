@@ -1,53 +1,45 @@
-# Engineering Portfolio
+# Premium Engineering Portfolio
 
-A modern, futuristic portfolio website built with React, Tailwind CSS, and Framer Motion.
+A world-class, high-performance portfolio website featuring advanced CSS interactions, 3D animations, and a sophisticated glassmorphism design system.
 
-## Features
+## ✨ Premium Features
 
-- **Dark theme** with gradient backgrounds
-- **Glassmorphism** card design
-- **Custom animated cursor** with glow effect (desktop only)
-- **Typing animation** in hero section
-- **Particle background** with connecting lines
-- **Scroll reveal animations** on all sections
-- **Animated skill progress bars**
-- **Interactive project cards** with hover effects
-- **Responsive design** for mobile and desktop
-- **Smooth scroll navigation**
+- **💎 Advanced Glassmorphism**: Multi-layered frosted glass panels with dynamic borders and shadows.
+- **🌌 Mesh Gradient Backgrounds**: Animated, high-end mesh gradients for a premium atmosphere.
+- **🎮 3D Tilt-Shine Interactions**: Interactive project and skill cards that tilt in 3D space and track light.
+- **🍱 Bento-Grid Skills Section**: A modern, visual hierarchy for technical skills and tools.
+- **🚀 60 FPS Animations**: Optimized hardware-accelerated transitions and scroll reveals.
+- **🖱️ Parallax Particle System**: Depth-sensing background particles with smooth mouse-tracking logic.
+- **📝 Simplified Language**: Clear, direct, and accessible content for better user engagement.
+- **📱 Responsive Excellence**: Perfectly optimized for everything from mobile phones to 4K displays.
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- React 18
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- Vite
+- **Structure**: Semantic HTML5
+- **Styling**: Vanilla CSS3 (Custom Variables, Keyframes, Flex/Grid)
+- **Framework**: Bootstrap 5.3 (Grid & Utilities)
+- **Logic**: Vanilla JavaScript (ES6+, Intersection Observer, DOM API)
+- **Icons**: Bootstrap Icons
+- **Typography**: Google Fonts (Outfit, JetBrains Mono)
 
-## Getting Started
+## 🌐 Professional Profiles
 
-### Install dependencies
+- **GitHub**: [github.com/komal-k2005](https://github.com/komal-k2005)
+- **LinkedIn**: [linkedin.com/in/komal-kathawade](https://www.linkedin.com/in/komal-kathawade/)
+- **LeetCode**: [leetcode.com/komal-k2005](https://leetcode.com/komal-k2005/)
+- **HackerRank**: [hackerrank.com/komal_k2005](https://www.hackerrank.com/komal_k2005)
+- **Kaggle**: [kaggle.com/komalk2005](https://www.kaggle.com/komalk2005)
 
-```bash
-npm install
-```
+## 🚀 Setting Up Locally
 
-### Run development server
+This is a high-performance static site with no heavy dependencies or build steps required.
 
-```bash
-npm run dev
-```
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/komal-k2005/komal-portfolio.git
+   ```
+2. **Open index.html**:
+   Simply open `index.html` in any modern web browser to view the portfolio.
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-### Build for production
-
-```bash
-npm run build
-```
-
-### Preview production build
-
-```bash
-npm run preview
-```
-
+---
+Designed & Built by **Komal Kathawade**
