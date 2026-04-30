@@ -24,11 +24,11 @@ A world-class, high-performance portfolio website featuring advanced CSS interac
 
 ## 🌐 Professional Profiles
 
-- **GitHub**: [github.com/komal-k2005](https://github.com/komal-k2005)
-- **LinkedIn**: [linkedin.com/in/komal-kathawade](https://www.linkedin.com/in/komal-kathawade/)
-- **LeetCode**: [leetcode.com/komal-k2005](https://leetcode.com/komal-k2005/)
-- **HackerRank**: [hackerrank.com/komal_k2005](https://www.hackerrank.com/komal_k2005)
-- **Kaggle**: [kaggle.com/komalk2005](https://www.kaggle.com/komalk2005)
+- **GitHub**: (https://github.com/komal-k2005)
+- **LinkedIn**: (https://www.linkedin.com/in/komal-kathwade/))
+- **LeetCode**:(https://leetcode.com/komal-k2005/)
+- **HackerRank**:(https://www.hackerrank.com/komal_k2005)
+- **Kaggle**: (https://www.kaggle.com/komalk2005)
 
 ## 🚀 Setting Up Locally
 
