@@ -1,45 +1,16 @@
-# Premium Engineering Portfolio
+# React + Vite
 
-A world-class, high-performance portfolio website featuring advanced CSS interactions, 3D animations, and a sophisticated glassmorphism design system.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## ✨ Premium Features
+Currently, two official plugins are available:
 
-- **💎 Advanced Glassmorphism**: Multi-layered frosted glass panels with dynamic borders and shadows.
-- **🌌 Mesh Gradient Backgrounds**: Animated, high-end mesh gradients for a premium atmosphere.
-- **🎮 3D Tilt-Shine Interactions**: Interactive project and skill cards that tilt in 3D space and track light.
-- **🍱 Bento-Grid Skills Section**: A modern, visual hierarchy for technical skills and tools.
-- **🚀 60 FPS Animations**: Optimized hardware-accelerated transitions and scroll reveals.
-- **🖱️ Parallax Particle System**: Depth-sensing background particles with smooth mouse-tracking logic.
-- **📝 Simplified Language**: Clear, direct, and accessible content for better user engagement.
-- **📱 Responsive Excellence**: Perfectly optimized for everything from mobile phones to 4K displays.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## 🛠️ Tech Stack
+## React Compiler
 
-- **Structure**: Semantic HTML5
-- **Styling**: Vanilla CSS3 (Custom Variables, Keyframes, Flex/Grid)
-- **Framework**: Bootstrap 5.3 (Grid & Utilities)
-- **Logic**: Vanilla JavaScript (ES6+, Intersection Observer, DOM API)
-- **Icons**: Bootstrap Icons
-- **Typography**: Google Fonts (Outfit, JetBrains Mono)
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 🌐 Professional Profiles
+## Expanding the ESLint configuration
 
-- **GitHub**: (https://github.com/komal-k2005)
-- **LinkedIn**: (https://www.linkedin.com/in/komal-kathwade/))
-- **LeetCode**:(https://leetcode.com/komal-k2005/)
-- **HackerRank**:(https://www.hackerrank.com/komal_k2005)
-- **Kaggle**: (https://www.kaggle.com/komalk2005)
-
-## 🚀 Setting Up Locally
-
-This is a high-performance static site with no heavy dependencies or build steps required.
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/komal-k2005/komal-portfolio.git
-   ```
-2. **Open index.html**:
-   Simply open `index.html` in any modern web browser to view the portfolio.
-
----
-Designed & Built by **Komal Kathawade**
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
