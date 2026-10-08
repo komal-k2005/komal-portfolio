@@ -1,4 +1,5 @@
 import { GraduationCap } from "lucide-react";
+import { motion } from "framer-motion";
 import { education, certifications, profile } from "../data/portfolio";
 import SectionTitle from "./SectionTitle";
 import { FadeIn } from "./ui";
@@ -57,14 +58,16 @@ export default function Education() {
         </div>
 
         <FadeIn className="mt-8 text-center">
-          <a
+          <motion.a
             href={profile.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-cyan-400 transition-colors"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass glass-hover text-sm font-medium text-slate-300 hover:text-cyan-400 border border-white/10 transition-all shadow-md"
           >
             View full profile on LinkedIn →
-          </a>
+          </motion.a>
         </FadeIn>
       </div>
     </section>
