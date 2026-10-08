@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, Send } from "lucide-react";
-import { GitHubIcon, LinkedInIcon, UpworkIcon } from "./SocialIcons";
+import { GitHubIcon, LinkedInIcon } from "./SocialIcons";
 import { profile } from "../data/portfolio";
 import SectionTitle from "./SectionTitle";
 
@@ -24,12 +24,6 @@ const contactItems = [
     href: profile.linkedin,
   },
   {
-    icon: UpworkIcon,
-    label: "Upwork",
-    value: "Hire me on Upwork",
-    href: profile.upwork,
-  },
-  {
     icon: GitHubIcon,
     label: "GitHub",
     value: "komal-k2005",
@@ -44,7 +38,7 @@ export default function Contact() {
         <SectionTitle
           label="Contact"
           title="Get In Touch"
-          subtitle="Open for internships, collaborations, and freelance projects."
+          subtitle="Open for trainee roles, full-stack opportunities, and collaborations."
         />
 
         <div className="grid lg:grid-cols-2 gap-8">
@@ -69,9 +63,16 @@ export default function Contact() {
               );
 
               return item.href ? (
-                <a key={item.label} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer">
+                <motion.a
+                  key={item.label}
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  whileHover={{ x: 6 }}
+                  className="block"
+                >
                   {content}
-                </a>
+                </motion.a>
               ) : (
                 <div key={item.label}>{content}</div>
               );
@@ -82,22 +83,28 @@ export default function Contact() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass rounded-2xl p-6 md:p-8"
+            className="glass rounded-2xl p-6 md:p-8 flex flex-col justify-between"
           >
-            <h3 className="text-xl font-bold text-white mb-2">Send a Message</h3>
-            <p className="text-slate-400 text-sm mb-6">
-              Click below to open your email client with a pre-filled subject line.
-            </p>
-            <a
-              href={`mailto:${profile.email}?subject=Hello%20Komal%20-%20Portfolio%20Contact&body=Hi%20Komal%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding...`}
-              className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold hover:shadow-lg hover:shadow-purple-500/25 transition-all hover:-translate-y-0.5"
-            >
-              <Send size={18} />
-              Email Me
-            </a>
-            <p className="mt-4 text-center text-xs text-slate-500">
-              Usually responds within 24 hours
-            </p>
+            <div>
+              <h3 className="text-xl font-bold text-white mb-2">Send a Message</h3>
+              <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+                Interested in working together or hiring for a Java Full Stack role? Click below to reach out directly.
+              </p>
+            </div>
+            <div>
+              <motion.a
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                href={`mailto:${profile.email}?subject=Hello%20Komal%20-%20Interview%20/%20Opportunity&body=Hi%20Komal%2C%0A%0AI%20reviewed%20your%20portfolio%20and%20would%20like%20to%20connect%20regarding...`}
+                className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-cyan-600 text-white font-semibold shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all btn-primary"
+              >
+                <Send size={18} />
+                Email Me Directly
+              </motion.a>
+              <p className="mt-4 text-center text-xs text-slate-500">
+                Usually responds within 24 hours
+              </p>
+            </div>
           </motion.div>
         </div>
       </div>
