@@ -1,7 +1,7 @@
 import { GraduationCap, Briefcase, Award, Code2 } from "lucide-react";
 import { summary, highlights, profile } from "../data/portfolio";
 import SectionTitle from "./SectionTitle";
-import { FadeIn } from "./ui";
+import { FadeIn, AnimatedCounter } from "./ui";
 
 const icons = [GraduationCap, Code2, Briefcase, Award];
 
@@ -25,8 +25,8 @@ export default function About() {
               <div className="mt-6 flex flex-wrap gap-2">
                 {[
                   "Open to Work",
-                  "Freelance Ready",
-                  "Available on Upwork",
+                  "Java Full Stack",
+                  "Spring Boot & Spring AI",
                   profile.location,
                 ].map((tag) => (
                   <span
@@ -46,10 +46,12 @@ export default function About() {
               return (
                 <div
                   key={item.label}
-                  className="glass glass-hover rounded-2xl p-5 text-center transition-all duration-300"
+                  className="glass glass-hover rounded-2xl p-5 text-center transition-all duration-300 hover:-translate-y-1"
                 >
                   <Icon className="w-5 h-5 text-purple-400 mx-auto mb-2" />
-                  <div className="text-2xl font-bold gradient-text">{item.value}</div>
+                  <div className="text-2xl font-bold gradient-text">
+                    <AnimatedCounter value={item.value} />
+                  </div>
                   <div className="text-xs text-slate-500 mt-1 uppercase tracking-wide">
                     {item.label}
                   </div>
