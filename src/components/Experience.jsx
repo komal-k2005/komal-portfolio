@@ -19,11 +19,14 @@ export default function Experience() {
           {experience.map((job, i) => (
             <FadeIn key={job.company} delay={i * 0.1}>
               <div className="relative pl-0 sm:pl-16 pb-10 last:pb-0">
-                <div className="hidden sm:flex absolute left-4 top-1 w-5 h-5 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 items-center justify-center ring-4 ring-surface">
-                  <Briefcase size={10} className="text-white" />
+                <div className="hidden sm:flex absolute left-4 top-1 w-5 h-5 rounded-full bg-gradient-to-br from-purple-500 to-cyan-500 items-center justify-center ring-4 ring-purple-500/20 shadow-md">
+                  {job.period.includes("Present") && (
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
+                  )}
+                  <Briefcase size={10} className="text-white relative z-10" />
                 </div>
 
-                <div className="glass glass-hover rounded-2xl p-6 md:p-8 transition-all duration-300">
+                <div className="glass glass-hover rounded-2xl p-6 md:p-8 transition-all duration-300 hover:-translate-y-1">
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
                     <div>
                       <h3 className="text-xl font-bold text-white">{job.role}</h3>
